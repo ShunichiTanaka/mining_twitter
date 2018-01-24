@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+mecabのコンパイル
+$ cd lib/mecab-0.996
+$ ./configure --enable-utf8-only
+$ make
 
-Things you may want to cover:
+ビルド成功確認
+$ make check
+> ==================
+> All 3 tests passed
+> ==================
 
-* Ruby version
+mecabインストール
+$ make install
 
-* System dependencies
+IPA辞書のコンパイル
+$ cd lib/mecab-ipadic-2.7.0-20070801           
+$ ./configure --with-charset=utf-8
+$ make
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+IPA辞書インストール
+$ make install
