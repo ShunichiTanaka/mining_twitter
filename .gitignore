@@ -13,7 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# 新規追加分
 /vendor/bundle
+/.env
 
 /node_modules
 /yarn-error.log
