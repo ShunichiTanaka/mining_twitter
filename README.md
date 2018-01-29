@@ -6,7 +6,8 @@ $ ./configure --enable-utf8-only
 $ make
 
 ビルド成功確認  
-$ make check  
+$ make check 
+
 `
     ==================
 
@@ -30,9 +31,11 @@ $ make install
 辞書作成  
 $ cd lib/mecab-ipadic-2.7.0-20070801  
 $ vim hoge.csv  
+
 `
 仮想通貨,1,1,10,名詞,一般,*,*,*,*,仮想通貨,カソウツウカ
-`  
+`
+
 エンコードをutf8からeucに変換  
 $ iconv -f utf-8 -t eucjp hoge.csv > hoge_euc.csv  
 
