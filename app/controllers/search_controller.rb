@@ -6,9 +6,18 @@ class SearchController < ApplicationController
     @tweets = Tweet.new.user_timeline(params[:q])
     @st_arr = []
     @tweets.each do |tweet|
-      Natto::MeCab.new.parse(tweet.text) do |hel|
-        @st_arr << hel.feature.split(',')[6] if hel.feature.match(/名詞/)
+      Natto::MeCab.new.parse(tweet.text) do |st|
+        if st.feature.match(/名詞/)
+          noun = extract_noun(st)
+          @st_arr << extract_noun(st) unless noun.length == 1
+        end
       end
     end
+  end
+
+  private
+
+  def extract_noun(word)
+    word.feature.split(',')[6]
   end
 end

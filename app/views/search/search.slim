@@ -1,8 +1,12 @@
-= @tweets.each do |tweet|
-  = tweet.text
-  br
-  br
-= @st_arr.each do |tweet|
-  = tweet
-  br
-  br
+table
+  - @tweets.each do |tweet|
+    tr
+      td
+        = tweet.created_at
+      td
+        = tweet.text
+table
+  - @st_arr.each do |tweet|
+    tr
+      td
+        = tweet
